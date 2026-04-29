@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart – DAILY BASKET</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <a href="/" class="nav-logo">
+      <div class="logo-icon">🛒</div>
+      <span class="logo-text">DAILY <span>BASKET</span></span>
+    </a>
+    <div class="nav-right">
+      <span class="nav-tagline">Fresh. Fast. Delivered.</span>
+      <a href="/cart-page" class="cart-btn">
+        <i class="fa-solid fa-basket-shopping"></i>
+        Cart
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== CART PAGE ===== -->
+  <div class="cart-page-wrapper">
+    <div class="cart-page-header">
+      <h1 class="cart-page-title"><i class="fa-solid fa-basket-shopping" style="color:var(--green-bright)"></i> My Basket</h1>
+      <a href="/" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+      </a>
+    </div>
+
+    <div class="cart-layout">
+      <!-- Cart Items -->
+      <div>
+        <div class="cart-items-list" id="cart-items-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div id="cart-summary-section">
+        <div class="cart-summary">
+          <div class="summary-title">
+            <i class="fa-solid fa-receipt" style="color:var(--green-bright)"></i> Order Summary
+          </div>
+
+          <!-- Free delivery note -->
+          <div id="free-delivery-note" style="display:none; align-items:center; gap:8px; background:var(--green-light); border-radius:8px; padding:8px 12px; margin-bottom:12px; font-size:0.8rem; color:var(--green-dark); font-weight:600;">
+            <i class="fa-solid fa-truck-fast"></i> Free delivery on orders above ₹500!
+          </div>
+
+          <div class="summary-row">
+            <span>Items (<span id="summary-items">0</span>)</span>
+            <span id="summary-subtotal">₹0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Delivery Fee</span>
+            <span id="summary-delivery">₹40.00</span>
+          </div>
+          <div class="summary-row">
+            <span>
+              Discount
+              <span class="discount-badge" style="margin-left:6px">Orders &gt; ₹500</span>
+            </span>
+            <span id="summary-discount" style="color:var(--green-mid)">—</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span class="amount" id="summary-total">₹0.00</span>
+          </div>
+
+          <button class="checkout-btn" onclick="checkout()">
+            <i class="fa-solid fa-lock"></i> Place Order
+          </button>
+          <button class="clear-cart-btn" onclick="clearCart()">
+            <i class="fa-solid fa-trash"></i> Clear Cart
+          </button>
+
+          <div style="margin-top:16px; text-align:center; font-size:0.75rem; color:var(--gray-500);">
+            <i class="fa-solid fa-shield-halved" style="color:var(--green-bright)"></i>
+            Secure checkout · Free returns
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2024 <strong>DAILY BASKET</strong> · Fresh groceries delivered to your door · Built with ❤️</p>
+  </footer>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
